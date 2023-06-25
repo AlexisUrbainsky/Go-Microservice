@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-ms-deploy
+  labels:
+    app: people-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: people-ms
+  template:
+    metadata:
+      labels:
+        app: people-ms
+    spec:
+      containers:
+      - name: app
+        image: go-ms
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+        - name: PORT
+          value: "3000" 
+        - name: DB_HOST
+          value: "192.168.1.85"
+        - name: DB_NAME
+          value: "gopostgres"
+        - name: DB_USER
+          value: "postgres"
+        - name: DB_PASSWORD
+          value: "alex"
+        - name: DB_PORT
+          value: "5432"
+        - name: LOGFILE
+          value: "peopleservice.log"
+        - name: LOGPATH
+          value: "../logs/"
+        - name: ENV
+          value: "DEV" 
