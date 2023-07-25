@@ -4,40 +4,6 @@
 
 <br/>
 
-# **Visual Studio Code**
-
-1. Descargamos **Visual Studio Code**
-
-2. En el icono Extenciones instalaremos lo siguiente
-
-   - **GO**
-
-   - **Material Icon Theme**
-
-     - Permite una mejor Visualizacion de las carpetas y archivos
-
-   - **Docker**
-
-   - **Kubernetes**
-
-   - **YAML**
-
-   - **Markdown Preview Enhanced** (Permite leer archivos .md)
-
-     - Para leer archivos como **README.md -> Open File with y seleccionar MarkDown**
-
-   - **Prettier**
-
-     - Luego iremos a **Preferences -> setting -> text editor -> default formatter y selecionamos Prettier**
-
-     - Ejecutamos **Alt + Shift + F** para formatear
-
-     - En caso de querer que sea automatico ir a **Preferences -> setting -> text editor -> Formmatting -> y chequeamos "Format on Save"**
-
-   - **Ayu, bearded Theme, Material Theme, Atom** (Temas de VsCode)
-
-<br/>
-
 # **Iniciamos el proyecto**
 
     C:\User\Alex\workspace>mkdir people
@@ -60,11 +26,7 @@
 
     go get -u gorm.io/gorm
 
-    go get -u gorm.io/driver/sqlserver
-
     go get -u gorm.io/driver/postgres
-
-    go get -u gorm.io/driver/mysql
 
 <br/>
 
@@ -80,12 +42,6 @@
 
 <br/>
 
-# **Variables de entorno**
-
-Para que funcione el proyecto debe crear un archivo **.env** con todas las variables de entorno que se encuentran en el archivo **app.env.example**
-
-<br/>
-
 # **CompileDaemon**
 
 Cuando hagamos un cambio en nuestro codigo automaticamente vuelva a deployar la aplicacion evitando parar y levantar el proyecto todo el tiempo
@@ -97,24 +53,6 @@ Una vez instalado para levantar el proyecto ejecutar el comando desde la carpeta
     CompileDaemon -command="./cmd.exe"
 
 Al ejecutar este comando se hace el build de la app compila el .exe del proyecto ejemplo gin.exe
-
-<br/>
-
-# **Swagger**
-
-Para los ambientes de Desarrollo y QA utilizamos swagger para documentar y ejecutar nuestros servicios
-
-    go get -u github.com/swaggo/swag/cmd/swag
-
-    go install github.com/swaggo/swag/cmd/swag@latest
-
-    swag init
-
-    go get -u github.com/gofiber/swagger
-
-<br/>
-
-# **Test**
 
 <br/>
 
@@ -151,3 +89,9 @@ Luego ejecutaremos los siguientes comandos
     kubectl apply -f .k8s\deployment.yaml
 
     kubectl apply -f .k8s\service.yaml
+
+<br/>
+
+# **Test**
+
+<br/>
