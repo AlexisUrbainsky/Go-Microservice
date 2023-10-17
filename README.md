@@ -2,14 +2,6 @@
 
 <br/>
 
-# **Iniciamos el proyecto**
-
-    C:\User\Alex\workspace>mkdir people
-
-    go mod init people
-
-<br/>
-
 # **Dependencies**
 
 <br/>
